@@ -1,0 +1,755 @@
+.header {
+    width: 100%;
+    height: 114px;
+    background: #8cc63f;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+.header .container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 0 30px;
+}
+.nav {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease 0s;
+}
+.nav__ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+.cart {
+    position: relative;
+    height: 50px;
+    display: none;
+}
+.cart__img {
+}
+.cart__numb {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #2f4f3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8cc63f;
+    font-family: "Nunito", sans-serif;
+}
+div {
+    height: 100%;
+}
+.burger {
+    width: 30px;
+    height: 20px;
+    display: none;
+    position: relative;
+    cursor: pointer;
+    outline: none !important;
+}
+.burger span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    top: 50%;
+    transition: all 0.3s ease 0s;
+}
+.burger span:first-child {
+    top: 0;
+}
+.burger span:last-child {
+    top: 99%;
+}
+.burger.active span {
+    opacity: 0;
+}
+.burger.active span:nth-child(1) {
+    opacity: 1;
+    top: 50%;
+    transform: rotate(45deg);
+}
+.burger.active span:nth-child(3) {
+    opacity: 1;
+    top: 50%;
+    transform: rotate(-45deg);
+}
+.nav__li {
+    margin: 0 20px;
+    font-family: "Nunito", sans-serif;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+}
+@media (max-width: 980px) {
+    .nav__li {
+        top: 0px;
+    }
+}
+.nav__lang {
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    color: #fff;
+
+    margin-right: 10px;
+}
+.nav__li-logo {
+    margin: 0 20px;
+}
+.nav__link {
+    color: #fff;
+    font-weight: 700;
+    font-size: 17px;
+}
+.nav__link:hover {
+    color: #2f4f3c;
+}
+.nav__li::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    transition: width 0.3s ease 0s;
+
+    top: 110%;
+}
+.nav__li:hover::after {
+    width: 100%;
+}
+
+.logo {
+    /* position: absolute; */
+    /* left: 50%; */
+    /* top: 75%; */
+    position: relative;
+    top: 30px;
+}
+.logo__img {
+}
+.logo-mob {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 980px) {
+    .logo-mob {
+        display: block;
+        width: 60px;
+        height: 60px;
+    }
+    .logo-mob img {
+        width: 100%;
+    }
+    .burger {
+        display: block;
+    }
+    .header {
+        height: 80px;
+    }
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 0;
+        background: #8cc63f;
+        border-radius: 0px 0px 24px 24px;
+        overflow: hidden;
+        padding-top: 0;
+    }
+    .nav.active {
+        padding-top: 70px;
+
+        height: 370px;
+    }
+    .nav__ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav__li-logo {
+        display: none;
+    }
+    .nav__li {
+        margin-bottom: 30px;
+        margin-right: 0;
+    }
+    .cart {
+        display: block;
+    }
+}
+
+.section {
+    width: 100%;
+}
+.main-section {
+    background-image: url("../img/bg.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: 40px;
+}
+
+.main-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.heading {
+    font-family: "Orelega One";
+}
+.main-section .heading {
+    margin-top: 410px;
+    font-family: "Orelega One";
+
+    font-size: 57px;
+    line-height: 75px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    max-width: 720px;
+    color: #8cc63f;
+    font-weight: 800;
+}
+@media (max-width: 720px) {
+    .main-section .heading {
+        font-size: 45px;
+        margin-top: 300px;
+    }
+    .main-section {
+        background-image: url("../img/bg.png");
+        background-size: 100% cover;
+        background-repeat: no-repeat;
+        background-position-y: 0px;
+        /* background-position-x: -550px; */
+    }
+}
+@media (max-width: 520px) {
+    .main-section .heading {
+        font-size: 30px;
+    }
+    .main-section {
+        background-image: url("../img/mob.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-y: 80px;
+        background-position-x: 0px;
+    }
+}
+.line {
+    margin: 30px 0 0px 0;
+    width: 240px;
+    height: 50px;
+}
+.description {
+    font-family: "Orelega One";
+    font-size: 40px;
+    color: #2f4f3c;
+    font-weight: 800;
+    text-align: center;
+}
+@media (max-width: 520px) {
+    .description {
+        font-size: 30px;
+    }
+}
+
+.products {
+    display: flex;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.image {
+    position: absolute;
+    max-height: 200px;
+}
+.image.one {
+    left: 0;
+    top: 13%;
+}
+.image.two {
+    right: 0;
+    top: 15%;
+}
+.image.three {
+    left: 0;
+    top: 25%;
+}
+.image.four {
+    right: 0;
+    top: 35%;
+}
+.image.five {
+    left: 0;
+    top: 45%;
+}
+.image.six {
+    right: 0;
+    top: 60%;
+}
+.products-list {
+    margin-top: 60px;
+    border-bottom: 1px solid rgba(244, 118, 118, 0.5);
+    padding: 10px 0;
+}
+
+.product-button {
+    color: #2f4f3c;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 0;
+    margin: 10px;
+    cursor: pointer;
+}
+.product-button.active,
+.product-button:hover {
+    border-bottom: 2px solid #2f4f3c;
+}
+@media (max-width: 420px) {
+    .product-button {
+        font-size: 12px;
+    }
+}
+/* .active {
+    border-bottom: 3px solid #f47676;
+} */
+
+.products-main {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    max-width: 1650px;
+    margin-top: 50px;
+    padding: 0 15px;
+}
+.products-items {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 30px;
+}
+
+.product-item {
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 16px rgba(184, 180, 176, 0.5);
+    border-radius: 24px;
+    padding: 30px 10px 0 10px;
+    margin-bottom: 30px;
+    z-index: 10;
+    background: #fff;
+}
+@media (max-width: 1300px) {
+    .products-items {
+        width: 68%;
+    }
+    .product-item {
+        width: 32%;
+
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 980px) {
+    .products-main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .products-items {
+        width: 100%;
+        padding: 0 15px;
+        margin-right: 0px;
+    }
+    .product-item {
+        width: 48%;
+
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .product-item {
+        width: 100%;
+
+        margin-bottom: 20px;
+    }
+}
+.product-item__heading {
+    font-family: "Orelega One";
+    text-align: center;
+    color: #2f4f3c;
+    max-width: 200px;
+    line-height: 32px;
+    height: 100px;
+}
+.product-item__image-block {
+}
+.product-item__img {
+}
+.product-item__price {
+    margin-top: 20px;
+    font-family: "Nunito", sans-serif;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-item__form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+}
+
+.product-item__form .count-number {
+    margin: 10px 25px;
+    font-family: "Nunito", sans-serif;
+    font-size: 18px;
+}
+@media (max-width: 1480px) {
+    .product-item__form .count-number {
+        margin: 10px;
+    }
+}
+.count {
+    padding: 0 15px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+.count__minus {
+    background: none;
+    border: none;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+}
+.count__plus {
+    border: none;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+
+    background: none;
+}
+.cart__add {
+    cursor: pointer;
+    background: #2f4f3c;
+    border: none;
+    padding: 15px 10px;
+    border-radius: 18px;
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.cart__add:hover {
+    background: none;
+    border: 2px solid #2f4f3c;
+    color: #2f4f3c;
+    padding: 13px 10px;
+}
+@media (max-width: 1480px) {
+    .product-item__form {
+        padding: 10px 10px;
+    }
+    .cart__add {
+        font-size: 12px;
+    }
+}
+@media (max-width: 720px) {
+    .product-item__form {
+        flex-direction: column;
+    }
+    .count {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .cart__add {
+        width: 100%;
+    }
+}
+
+.products-cart {
+    border: 2px solid #8cc63f;
+    border-radius: 24px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 19%;
+    z-index: 10;
+    background: #fff;
+}
+@media (max-width: 1300px) {
+    .products-cart {
+        width: 26%;
+    }
+}
+@media (max-width: 980px) {
+    .products-cart {
+        width: 80%;
+    }
+}
+@media (max-width: 520px) {
+    .products-cart {
+        width: 100%;
+    }
+}
+.product-cart__heading {
+    color: #2f4f3c;
+    font-family: "Orelega One";
+    font-size: 20px;
+}
+.cart-items {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.cart-item__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cart-item__del {
+    margin-right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.cart-item__title {
+    font-family: "Nunito", sans-serif;
+    color: #2f4f3c;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    font-weight: 600;
+}
+.cart-item__del-img {
+}
+.cart-item__dop {
+    font-family: "Nunito", sans-serif;
+
+    margin-top: 15px;
+    padding-left: 40px;
+    color: #2f4f3c;
+}
+.products-cart .line {
+    margin: 0px;
+    width: 100%;
+}
+.products-cart .line img {
+    width: 100%;
+}
+.subtotal {
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #2f4f3c;
+    font-family: "Nunito", sans-serif;
+}
+.subtotal__text {
+    font-weight: 600;
+}
+.subtotal__price {
+}
+.cart-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Nunito", sans-serif;
+    width: 100%;
+}
+.cart-form__pay {
+    border: none;
+    background: #8cc63f;
+    font-size: 18px;
+
+    color: #fff;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.cart-form__pay:hover {
+    border: 2px solid rgb(59, 59, 59);
+    background: none;
+    color: rgb(54, 54, 54);
+}
+.cart-form__cart {
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px 15px;
+    background: none;
+    border: 2px solid rgb(59, 59, 59);
+    color: rgb(54, 54, 54);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.cart-form__cart:hover {
+    border: none;
+    background: #8cc63f;
+    color: #fff;
+    padding: 12px 15px;
+}
+main {
+    padding-bottom: 50px;
+}
+
+.footer {
+    background: #8cc63f;
+    padding: 60px 15px;
+}
+.footer .container {
+    margin: auto;
+    max-width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer-item {
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+}
+.footer-item a {
+    color: #fff;
+    font-size: 18px;
+}
+.footer-item a:hover {
+    color: #2f4f3c;
+}
+.footer-item__heading {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.footer-item__ul {
+}
+.footer-item__li {
+    margin-bottom: 10px;
+}
+.footer-item__link {
+}
+
+@media (max-width: 980px) {
+    .footer-item {
+        width: 48%;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .footer-item__ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+@media (max-width: 520px) {
+    .footer-item {
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .footer-item__ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+.product-item.sale {
+    position: relative;
+}
+
+.proudct-item__sale-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.product-item__heading {
+}
+.product-item__image-block {
+}
+.product-item__img {
+}
+.product-item__price.sale {
+    display: flex;
+    width: 100%;
+    padding: 0px 20px;
+    align-items: center;
+}
+@media (max-width: 1200px) {
+    .product-item__price.sale {
+        flex-direction: column;
+    }
+}
+.product-item__price.sale .sale-price {
+    margin-right: 10px;
+    font-family: "Nunito", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #006837;
+}
+.product-item__price.sale .sale-p {
+    text-decoration: 3px line-through #f47676;
+}
+.product-item__form {
+}
+.count {
+}
+.count__minus {
+}
+.count-number {
+}
+.count__plus {
+}
+.cart__add {
+}
